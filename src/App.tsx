@@ -13,8 +13,9 @@ function App() {
   const currentUseStore = useCurrentUserStore();
 
   useEffect(() => {
-    setSession(), [];
-  });
+    setSession();
+  }, []);
+
   const setSession = async () => {
     const currentUser = await authRepository.getCurrentUser();
     currentUseStore.set(currentUser);
